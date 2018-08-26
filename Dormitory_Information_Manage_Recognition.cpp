@@ -17,11 +17,11 @@ struct dormitory{
 
 
 
-  //È«¾Ö±äÁ¿
+  //å…¨å±€å˜é‡
   int n = 0;
   struct  dormitory *head;
    
- //¶¨Òåº¯Êı---------------------
+ //å®šä¹‰å‡½æ•°---------------------
 int  fu_menu_select(); 
 int  zi_menu_select_1();
 int  zi_menu_select_2();
@@ -51,11 +51,11 @@ void search_dor_num(struct dormitory *head);
 
 
 
-
+//è¿›è¡Œå½•å…¥ä¿¡æ¯
 struct  dormitory *create(){
 	int i ;
 	int m;
-	printf("ÇëÊäÈëÏëÒªÂ¼ÈëËŞÉáĞÅÏ¢µÄÈËÊı£º"); 
+	printf("è¯·è¾“å…¥æƒ³è¦å½•å…¥å®¿èˆä¿¡æ¯çš„äººæ•°ï¼š"); 
 	scanf("%d",&m) ;
 	struct dormitory *p, *pt, *head;
 	
@@ -67,15 +67,15 @@ struct  dormitory *create(){
 		else
 		pt -> next  = p ;
 		pt = p;
-		printf("ĞÕÃû£º" );
+		printf("å§“åï¼š" );
 		scanf("%s", p -> name);
 	
 		
-		printf("Ñ§ºÅ£º" );
+		printf("å­¦å·ï¼š" );
 		scanf("%s", p -> stu_num);
 	
 		
-		printf("ËŞÉáºÅ£º" );
+		printf("å®¿èˆå·ï¼š" );
 		scanf("%s", p -> dor_num);
 		printf("\n");
 		
@@ -89,11 +89,11 @@ struct  dormitory *create(){
 
 
 
-//´òÓ¡ÏÔÊ¾ 
+//æ‰“å°æ˜¾ç¤º 
 void print(struct dormitory *head){
 	struct dormitory *p;
 	p = head ;
-	printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+	printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 	while(p != NULL){
 		printf("%2s\t %6s\t %8s\t", p -> name, p -> stu_num , p -> dor_num);
 		p = p -> next; 
@@ -101,21 +101,21 @@ void print(struct dormitory *head){
 	}	 
 }
 
-//Ìí¼ÓĞÅÏ¢
+//æ·»åŠ ä¿¡æ¯
 struct dormitory *insert(struct dormitory *head){
 	struct dormitory *p1;
 	p1 = (struct dormitory *) malloc (LEN);
-	printf("ÇëÊäÈëÒªÌí¼ÓÑ§ÉúµÄĞÅÏ¢£º\n");
+	printf("è¯·è¾“å…¥è¦æ·»åŠ å­¦ç”Ÿçš„ä¿¡æ¯ï¼š\n");
 	
-		printf("ĞÕÃû£º" );
+		printf("å§“åï¼š" );
 		scanf("%s", p1 -> name);
 	
 		
-		printf("Ñ§ºÅ£º" );
+		printf("å­¦å·ï¼š" );
 		scanf("%s", p1 -> stu_num);
 	
 		
-		printf("ËŞÉáºÅ£º" );
+		printf("å®¿èˆå·ï¼š" );
 		scanf("%s", p1 -> dor_num);
 		printf("\n");
 		
@@ -126,21 +126,21 @@ struct dormitory *insert(struct dormitory *head){
 		
 }
 
-//É¾³ıĞÅÏ¢
+//åˆ é™¤ä¿¡æ¯
 
 struct dormitory *dele(struct dormitory *head){
 	struct dormitory *p1 , *p2;
 	char name[10];
 	char fuction;
-	printf("------ÊäÈëÒªÉ¾³ıĞÅÏ¢µÄÈËµÄĞÕÃû£º-----£º");
+	printf("------è¾“å…¥è¦åˆ é™¤ä¿¡æ¯çš„äººçš„å§“åï¼š-----ï¼š");
 	scanf("%s", name);
 	getchar();
-	printf("------ÊÇ·ñÒª¼ÌĞø½øĞĞ¸Ã²Ù×÷£¿( y / n)------");
+	printf("------æ˜¯å¦è¦ç»§ç»­è¿›è¡Œè¯¥æ“ä½œï¼Ÿ( y / n)------");
 	scanf("%c",&fuction);
 	
 	if(fuction == 'y'){
 		if (head == NULL){
-			printf("-------ÄÚ´æÖĞÃ»ÓĞÈÎºÎĞÅÏ¢£¬ÎŞ·¨É¾³ı£¡£¡£¡----------");
+			printf("-------å†…å­˜ä¸­æ²¡æœ‰ä»»ä½•ä¿¡æ¯ï¼Œæ— æ³•åˆ é™¤ï¼ï¼ï¼----------");
 			return head;
 		}
 		
@@ -157,21 +157,21 @@ struct dormitory *dele(struct dormitory *head){
 			else 
 			 p2 -> next = p1 -> next ;
 			 
-			 printf("---ÒÑ¾­É¾³ı %s µÄĞÅÏ¢", name);
+			 printf("---å·²ç»åˆ é™¤ %s çš„ä¿¡æ¯", name);
 			  	  
 		n = n - 1;
 		}
         else
-		printf("---%s :Ã»ÓĞ´ËÈËµÄĞÅÏ¢" , name);
+		printf("---%s :æ²¡æœ‰æ­¤äººçš„ä¿¡æ¯" , name);
 	    return head;
 	    
 	}
 	else
-	    printf("---½áÊø²Ù×÷£¡£¡£¡"); 
+	    printf("---ç»“æŸæ“ä½œï¼ï¼ï¼"); 
 }
 
 
-//ĞŞ¸ÄĞÅÏ¢
+//ä¿®æ”¹ä¿¡æ¯
 
 void change(struct dormitory *head){
 	struct dormitory *p = head;
@@ -180,13 +180,13 @@ void change(struct dormitory *head){
 	char stu_num[10];
 	char dor_num[10];
 	
-	printf("ÇëÊäÈëÒªĞŞ¸ÄĞÅÏ¢Ñ§ÉúµÄĞÕÃû£º");
+	printf("è¯·è¾“å…¥è¦ä¿®æ”¹ä¿¡æ¯å­¦ç”Ÿçš„å§“åï¼š");
 	scanf("%s",name);
 	if (strcmp(name, p -> name) == 0){
-		printf("ÇëÊäÈëĞŞ¸ÄºóµÄĞÅÏ¢£º\n");
-		printf("Ñ§ºÅ£º");
+		printf("è¯·è¾“å…¥ä¿®æ”¹åçš„ä¿¡æ¯ï¼š\n");
+		printf("å­¦å·ï¼š");
 		scanf("%s",stu_num);
-		printf("ËŞÉáºÅ£º");
+		printf("å®¿èˆå·ï¼š");
 		scanf("%s",dor_num);
 		 
 		strcpy(p -> stu_num ,stu_num);
@@ -194,11 +194,11 @@ void change(struct dormitory *head){
 		
 	}
 	else if(name != p -> name){
-		printf("---ÇëÊäÈëÕıÈ·µÄĞÕÃû£¡£¡£¡"); 
+		printf("---è¯·è¾“å…¥æ­£ç¡®çš„å§“åï¼ï¼ï¼"); 
 	} 
 } 
 
-//°´ÕÕÑ§ºÅ½øĞĞÅÅĞò
+//æŒ‰ç…§å­¦å·è¿›è¡Œæ’åº
 struct dormitory *sort_stu_num(struct dormitory *head){
 	
 	int i ;
@@ -211,7 +211,7 @@ struct dormitory *sort_stu_num(struct dormitory *head){
 			}
 		}
 	}
-	printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+	printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 	for(t = head  ; t != NULL ; t = t -> next){
 	   	printf( "%2s\t %6s\t %8s\t", t -> name , t -> stu_num , t -> dor_num );
 		printf("\n");
@@ -219,7 +219,7 @@ struct dormitory *sort_stu_num(struct dormitory *head){
 			return head;
 	}	
 	
-//°´ÕÕËŞÉáºÅ½øĞĞÅÅĞò
+//æŒ‰ç…§å®¿èˆå·è¿›è¡Œæ’åº
 struct dormitory *sort_dor_num(struct dormitory *head){
 	struct dormitory *qi , *qj , *m;
 	
@@ -231,7 +231,7 @@ struct dormitory *sort_dor_num(struct dormitory *head){
 			}
 		}
 	}
-		printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+		printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 	for(m = head  ; m != NULL ; m = m -> next){
 	   	printf( "%2s\t %6s\t %8s\t",m -> name , m -> stu_num ,m -> dor_num );
 		printf("\n");
@@ -239,7 +239,7 @@ struct dormitory *sort_dor_num(struct dormitory *head){
 			return head;
 }
 
- //°´ÕÕÃû×ÖÅÅĞò 
+ //æŒ‰ç…§åå­—æ’åº 
  
 struct dormitory *sort_name(struct dormitory *head){
 	struct dormitory *xi ,*xj , *y;
@@ -251,7 +251,7 @@ struct dormitory *sort_name(struct dormitory *head){
 			}
 		}
 	}
-		printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+		printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 		for(y = head  ; y != NULL ; y= y -> next){
 	   	printf( "%2s\t %6s\t %8s\t",y -> name , y -> stu_num , y -> dor_num );
 		printf("\n");
@@ -259,7 +259,7 @@ struct dormitory *sort_name(struct dormitory *head){
 			return head;
 	
 }
- //°´ÕÕĞÕÃû½øĞĞ¶ş·Ö·¨²éÕÒ ÔÚ²éÕÒÖ®Ç° ±ØĞëÏÈÅÅĞò 
+ //æŒ‰ç…§å§“åè¿›è¡ŒäºŒåˆ†æ³•æŸ¥æ‰¾ åœ¨æŸ¥æ‰¾ä¹‹å‰ å¿…é¡»å…ˆæ’åº 
  
  void search_name(struct dormitory *head){
  	struct dormitory  *p;
@@ -292,7 +292,7 @@ struct dormitory *sort_name(struct dormitory *head){
 	 	p = p -> next;
 	 }
 	 
-	printf("---ÇëÊäÈëÄãÏë²éÑ¯ĞÅÏ¢³ÉÔ±ĞÕÃû£º");
+	printf("---è¯·è¾“å…¥ä½ æƒ³æŸ¥è¯¢ä¿¡æ¯æˆå‘˜å§“åï¼š");
 	scanf("%s", search_name); 
 	printf("\n");
 	 
@@ -313,9 +313,9 @@ struct dormitory *sort_name(struct dormitory *head){
 		}
 	
 	}
-	printf("²éÑ¯µÄ½á¹ûÎª£º");
+	printf("æŸ¥è¯¢çš„ç»“æœä¸ºï¼š");
 	printf("\n");
-	printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+	printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 	printf("%2s\t %6s\t %8s\t",name_str[t], stu_num_str[t], dor_num_str[t]); 
 	printf("\n");
 	
@@ -323,7 +323,7 @@ struct dormitory *sort_name(struct dormitory *head){
   
   
 
-//°´ÕÕÑ§ºÅ½øĞĞ ²éÑ¯ ÔÚ²éÑ¯Ö®Ç° ±ØĞë ÏÈ½øĞĞ ÅÅĞò
+//æŒ‰ç…§å­¦å·è¿›è¡Œ æŸ¥è¯¢ åœ¨æŸ¥è¯¢ä¹‹å‰ å¿…é¡» å…ˆè¿›è¡Œ æ’åº
  
 void search_stu_num(struct dormitory *head){
      struct dormitory *q ;
@@ -356,7 +356,7 @@ void search_stu_num(struct dormitory *head){
 	 	q= q-> next;
 	 }
 
-    printf("---ÇëÊäÈëÄãÏë²éÑ¯ĞÅÏ¢³ÉÔ±µÄÑ§ºÅ£º");
+    printf("---è¯·è¾“å…¥ä½ æƒ³æŸ¥è¯¢ä¿¡æ¯æˆå‘˜çš„å­¦å·ï¼š");
     scanf("%s", search_stu_num); 
     printf("\n");
  
@@ -376,9 +376,9 @@ void search_stu_num(struct dormitory *head){
    }
  }
  
-  	printf("²éÑ¯µÄ½á¹ûÎª£º");
+  	printf("æŸ¥è¯¢çš„ç»“æœä¸ºï¼š");
 	printf("\n");
-	printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+	printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 	printf("%2s\t %6s\t %8s\t",name_str[a], stu_num_str[a], dor_num_str[a]); 
 	printf("\n");
 	
@@ -386,7 +386,7 @@ void search_stu_num(struct dormitory *head){
  
 } 
 
-//°´ÕÕËŞÉáºÅ½øĞĞ²éÑ¯ ÔÚÊ¹ÓÃ¶ş·Ö·¨Ö®Ç° Ó¦¸Ã ÏÈ½øĞĞ ÅÅĞò
+//æŒ‰ç…§å®¿èˆå·è¿›è¡ŒæŸ¥è¯¢ åœ¨ä½¿ç”¨äºŒåˆ†æ³•ä¹‹å‰ åº”è¯¥ å…ˆè¿›è¡Œ æ’åº
  
 void search_dor_num(struct dormitory *head){
 		struct dormitory *p;
@@ -422,7 +422,7 @@ void search_dor_num(struct dormitory *head){
 	 }
 	
 	 
-    printf("---ÇëÊäÈëÄãÏë²éÑ¯ĞÅÏ¢³ÉÔ±µÄËŞÉáºÅ£º");
+    printf("---è¯·è¾“å…¥ä½ æƒ³æŸ¥è¯¢ä¿¡æ¯æˆå‘˜çš„å®¿èˆå·ï¼š");
 	scanf("%s", search_dor_num); 
 	printf("\n");
 	
@@ -441,9 +441,9 @@ void search_dor_num(struct dormitory *head){
 		   break;
 		}
 	}
-	printf("²éÑ¯µÄ½á¹ûÎª£º");
+	printf("æŸ¥è¯¢çš„ç»“æœä¸ºï¼š");
 	printf("\n");
-	printf("\nĞÕÃû         Ñ§ºÅ           ËŞÉáºÅ\n");
+	printf("\nå§“å         å­¦å·           å®¿èˆå·\n");
 	printf("%2s\t %6s\t %8s\t",name_str[t], stu_num_str[t], dor_num_str[t]); 
 	printf("\n");	 
     
@@ -458,7 +458,7 @@ void save(struct dormitory *head){
 	fp = fopen(FILENAME,"ab+");
 	p = head ;
 	if(fp == NULL){
-		printf("---±§Ç¸£¬´ò¿ªÎÄ¼ş´íÎó£¡£¡£¡");
+		printf("---æŠ±æ­‰ï¼Œæ‰“å¼€æ–‡ä»¶é”™è¯¯ï¼ï¼ï¼");
 		
 	} 
 	while( p != NULL){
@@ -498,21 +498,21 @@ void swap(struct dormitory *p1, struct dormitory *p2){
 }
 
 
-//×Ü²Ëµ¥µÄÑ¡Ôñ 
+//æ€»èœå•çš„é€‰æ‹© 
 void menu_select(){
 	struct dormitorys *p;
 	int flag ;
 	FILE  *f;
 	char t[] = "\r\n";
-	char tishi_1[] = "---±£´æµÄĞÅÏ¢ÈçÏÂ£º"; 
+	char tishi_1[] = "---ä¿å­˜çš„ä¿¡æ¯å¦‚ä¸‹ï¼š"; 
 	
-    char tishi_2[] = "---É¾³ıÖ®ºóµÄĞÅÏ¢ÈçÏÂ£º"; 
-    char tishi_3[] = "---Ôö¼ÓÖ®ºóµÄĞÅÏ¢ÈçÏÂ£º"; 
-    char tishi_4[] = "---ĞŞ¸ÄÖ®ºóµÄĞÅÏ¢ÈçÏÂ£º";
+    char tishi_2[] = "---åˆ é™¤ä¹‹åçš„ä¿¡æ¯å¦‚ä¸‹ï¼š"; 
+    char tishi_3[] = "---å¢åŠ ä¹‹åçš„ä¿¡æ¯å¦‚ä¸‹ï¼š"; 
+    char tishi_4[] = "---ä¿®æ”¹ä¹‹åçš„ä¿¡æ¯å¦‚ä¸‹ï¼š";
      
 	f = fopen(FILENAME, "ab+");
 	if(f == NULL){
-		printf("---³öÏÖÎÄ¼ş´íÎó");
+		printf("---å‡ºç°æ–‡ä»¶é”™è¯¯");
 	} 
      while(1){
      	switch(fu_menu_select()){
@@ -545,7 +545,7 @@ void menu_select(){
 			    			break;
 					}
 					if(flag == 1){
-						printf("------°´ÈÎÒâ¼ü·µ»Ø²éÕÒ×Ó²Ëµ¥------"); 
+						printf("------æŒ‰ä»»æ„é”®è¿”å›æŸ¥æ‰¾å­èœå•------"); 
 						getchar();	
 					}
 				}
@@ -571,7 +571,7 @@ void menu_select(){
 			    			break;
 					}
 					if(flag == 1){
-						printf("------°´ÈÎÒâ¼ü·µ»Ø²éÕÒ×Ó²Ëµ¥------"); 
+						printf("------æŒ‰ä»»æ„é”®è¿”å›æŸ¥æ‰¾å­èœå•------"); 
 						getchar();	
 					}
 				}
@@ -604,65 +604,65 @@ void menu_select(){
 			    break;						
 		
 			case 0:
-			  printf("----Ğ»Ğ»Ê¹ÓÃ-----");
+			  printf("----è°¢è°¢ä½¿ç”¨-----");
 			  exit(0);	    
 		 }
-		 printf("\n-------°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥-------");
+		 printf("\n-------æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•-------");
 		 getchar(); 
 	 }	
 }
 
 
 
-//¸¸²Ëµ¥ 
+//çˆ¶èœå• 
 int  fu_menu_select()
  {
 	int fu_sel;
   	system("cls");               
-  	printf("                           ############ËŞÉáĞÅÏ¢¹ÜÀíÏµÍ³##############                                                          "); 
-	printf("\n\n                                         [Ö÷²Ëµ¥]              "); 
-	printf("\n                               £¤|----------------------||\n");
-	printf("\n                               £¤|**||1.ËŞÉáĞÅÏ¢Â¼Èë    ||");
-    printf("\n                               £¤|**||2.ËŞÉáĞÅÏ¢ÏÔÊ¾    ||");
-	printf("\n                               £¤|**||3.ËŞÉáĞÅÏ¢²éÑ¯    ||");
-	printf("\n                               £¤|**||4.ËŞÉáĞÅÏ¢Ìí¼Ó    ||");
-	printf("\n                               £¤|**||5.ËŞÉáĞÅÏ¢É¾³ı    ||");
-	printf("\n                               £¤|**||6.ËŞÉáĞÅÏ¢ĞŞ¸Ä    ||"); 
-	printf("\n                               £¤|**||0.ÍË³öÏµÍ³        ||");
-	printf("\n                               £¤|----------------------||\n");
+  	printf("                           ############å®¿èˆä¿¡æ¯ç®¡ç†ç³»ç»Ÿ##############                                                          "); 
+	printf("\n\n                                         [ä¸»èœå•]              "); 
+	printf("\n                               ï¿¥|----------------------||\n");
+	printf("\n                               ï¿¥|**||1.å®¿èˆä¿¡æ¯å½•å…¥    ||");
+    printf("\n                               ï¿¥|**||2.å®¿èˆä¿¡æ¯æ˜¾ç¤º    ||");
+	printf("\n                               ï¿¥|**||3.å®¿èˆä¿¡æ¯æŸ¥è¯¢    ||");
+	printf("\n                               ï¿¥|**||4.å®¿èˆä¿¡æ¯æ·»åŠ     ||");
+	printf("\n                               ï¿¥|**||5.å®¿èˆä¿¡æ¯åˆ é™¤    ||");
+	printf("\n                               ï¿¥|**||6.å®¿èˆä¿¡æ¯ä¿®æ”¹    ||"); 
+	printf("\n                               ï¿¥|**||0.é€€å‡ºç³»ç»Ÿ        ||");
+	printf("\n                               ï¿¥|----------------------||\n");
 	for( ; ; )
 	{
-		printf("\n----ÇëÑ¡Ôñ£¨0-6£©£º");
+		printf("\n----è¯·é€‰æ‹©ï¼ˆ0-6ï¼‰ï¼š");
 		scanf("%d",&fu_sel) ;
 		printf("\n");
 		if(fu_sel < 0 || fu_sel > 6 )
-		printf("----ÊäÈë´íÎó£¡£¡");
+		printf("----è¾“å…¥é”™è¯¯ï¼ï¼");
 		else 
 		break;
 	} 
 	    return fu_sel; 
 }
 
-//×Ó²Ëµ¥1 
+//å­èœå•1 
 int  zi_menu_select_1() 
 {
 	int zi_sel_1;
 	system ("cls");
-	printf("\n   [ ËŞÉáĞÅÏ¢ÏÔÊ¾×Ó²Ëµ¥]    ");
+	printf("\n   [ å®¿èˆä¿¡æ¯æ˜¾ç¤ºå­èœå•]    ");
 	printf("\n------------------------\n");
-	printf("\n**||1.°´ĞÕÃûÅÅĞòÏÔÊ¾    ||    \n");
-	printf("\n**||2.°´Ñ§ºÅÅÅĞòÏÔÊ¾    ||    \n");
-	printf("\n**||3.°´ËŞÉáºÅÅÅĞòÏÔÊ¾  ||    \n");
-	printf("\n**||0.·µ»Ø              ||    \n");
+	printf("\n**||1.æŒ‰å§“åæ’åºæ˜¾ç¤º    ||    \n");
+	printf("\n**||2.æŒ‰å­¦å·æ’åºæ˜¾ç¤º    ||    \n");
+	printf("\n**||3.æŒ‰å®¿èˆå·æ’åºæ˜¾ç¤º  ||    \n");
+	printf("\n**||0.è¿”å›              ||    \n");
 	printf("\n------------------------\n");
 	for( ;  ; )
 	{
-    printf("\n ÇëÑ¡Ôñ£¨0-3£©£º");
+    printf("\n è¯·é€‰æ‹©ï¼ˆ0-3ï¼‰ï¼š");
 	scanf ("%d",&zi_sel_1);
 	printf("\n");
 	if(zi_sel_1 < 0 || zi_sel_1 > 3 )
 		{ 
-			printf("----ÊäÈë´íÎó£¡£¡");
+			printf("----è¾“å…¥é”™è¯¯ï¼ï¼");
 		} 
 		  else 
 		    { 
@@ -672,26 +672,26 @@ int  zi_menu_select_1()
 	return zi_sel_1;
 }
 	
-//×Ó²Ëµ¥2
+//å­èœå•2
 int  zi_menu_select_2() 
 {
 	int zi_sel_2;
 	system ("cls");
-	printf("\n   [ ËŞÉáĞÅÏ¢²éÕÒ×Ó²Ëµ¥]    ");
+	printf("\n   [ å®¿èˆä¿¡æ¯æŸ¥æ‰¾å­èœå•]    ");
 	printf("\n------------------------\n");
-	printf("\n**||1.°´ĞÕÃû²éÑ¯        ||    \n");
-	printf("\n**||2.°´Ñ§ºÅ²éÑ¯        ||    \n");
-	printf("\n**||3.°´ËŞÉáºÅ²éÑ¯      ||    \n");
-	printf("\n**||0.·µ»Ø              ||    \n");
+	printf("\n**||1.æŒ‰å§“åæŸ¥è¯¢        ||    \n");
+	printf("\n**||2.æŒ‰å­¦å·æŸ¥è¯¢        ||    \n");
+	printf("\n**||3.æŒ‰å®¿èˆå·æŸ¥è¯¢      ||    \n");
+	printf("\n**||0.è¿”å›              ||    \n");
 	printf("\n------------------------\n");
 	for( ;  ; )
 	{
-    printf("\n ÇëÑ¡Ôñ£¨0-3£©£º");
+    printf("\n è¯·é€‰æ‹©ï¼ˆ0-3ï¼‰ï¼š");
 	scanf ("%d",&zi_sel_2);
 	printf("\n");
 	if(zi_sel_2 < 0 || zi_sel_2 > 3 )
 		{ 
-			printf("----ÊäÈë´íÎó£¡£¡");
+			printf("----è¾“å…¥é”™è¯¯ï¼ï¼");
 		} 
 		  else 
 		    { 
