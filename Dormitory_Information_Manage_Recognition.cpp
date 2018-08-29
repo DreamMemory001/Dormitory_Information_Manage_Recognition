@@ -42,7 +42,8 @@ void search_dor_num(struct dormitory *head);
  //----------------------------------------
  
  
- 
+ //主函数进行显示主菜单
+
  int main(){
  	menu_select();
  	return 0;
